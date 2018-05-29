@@ -1,0 +1,36 @@
+'''
+Created on Tue May 29 16:07:22 2018
+
+@author: hamza
+
+Program used to pracrice Array Manipulaiton.
+
+-Print shape, size, max, min 
+-Reshape and Transpose the array
+'''
+# import numpy
+from numpy import *
+
+# create the array called my_arr which has shape(2,8)
+a = [[0, 1, 2, 3,4, 5, 6, 7], [10, 11, 12, 13, 14, 15, 16, 17]]
+my_arr = array(a)
+
+# print the array, its' shape, size, min and max.
+print my_arr
+print my_arr.shape
+print my_arr.size
+print my_arr.min()
+print my_arr.max()
+
+# reshape my_arr from (2,8) to (4,4) and print
+my_arr1 = my_arr.reshape(4,4)
+print my_arr1
+
+# reshape my_arr from (2,8) to (2,2,4) and print
+my_arr2 =  my_arr.reshape(2,2,4)
+print my_arr2
+
+# print the array transposed, flattened and convert elements to floats
+my_arr3 = (my_arr.T.flatten())
+flt = my_arr3.astype(float)
+print flt
