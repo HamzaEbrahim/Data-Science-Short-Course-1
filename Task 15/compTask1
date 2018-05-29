@@ -1,0 +1,27 @@
+#from numpy import *
+
+# Why doesn’t “np.array((1, 0, 0), (0, 1, 0), (0, 0, 1, dtype=float)” create a two dimensional array? Write the correct way.
+
+# The notation on the above is incorrect. There is no use of brackets, only parenthesis. Multidimensional arrays require brackets within brackets as below:
+# np.array([[1,0,0],[0,1,0],[0,0,1]], float)
+
+#● What is the difference between “a = np.array([0, 0, 0])” and “a = np.array([[0, 0, 0]]).
+# The “a = np.array([0, 0, 0])” is a single array while “a = np.array([[0, 0, 0]]) is a multidimensional array.
+
+#A 3 by 4 by 4 is created with “arr = np.linspace(1, 48, 48).reshape(3, 4, 4)”. Index or slice this array to obtain the following:
+
+# 20.0 = arr[1,0,3]
+
+#○ [ 9. 10. 11. 12.] = (arr[0,2])
+
+#○ [[33. 34. 35. 36.] [37. 38. 39. 40.] [41. 42. 43. 44.] [45. 46. 47. 48.]] = (arr[2])
+
+#○[[5. 6.], [21. 22.] [37. 38.]]=arr[array([0]),array([1]),0:2]; arr[array([1]),array([1]),0:2]; arr[array([2]),array([1]),0:2]
+
+#○ [[36. 35.] [40. 39.] [44. 43.] [48. 47.]] = arr[2,:,:1:-1]
+
+#○ [[13. 9. 5. 1.] [29. 25. 21. 17.] [45. 41. 37. 33.]] = vstack((arr[i, ::-1, 0] for i in range(3)))
+
+#○ [[1. 4.] [45. 48.]] = Seperate out the 2 rows fromt their matrices: vstack((arr[0,0:1,:])), vstack((arr[2,3:,:])). Create a new matrix with these 2 rows: test2 = concatenate((test,test1), axis=0  ). Slice to obtain: test2[0,0],test2[0,-1], test2[1,0],test2[-1,-1]
+
+#○ [[25. 26. 27. 28.], [29. 30. 31. 32.], [33. 34. 35. 36.], [37. 38. 39. 40.]] = np.vstack((arr[1, 2:, :], arr[2, :2, :]))
